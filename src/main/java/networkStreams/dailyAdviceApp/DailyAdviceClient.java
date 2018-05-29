@@ -1,4 +1,4 @@
-package networkStreams;
+package networkStreams.dailyAdviceApp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
