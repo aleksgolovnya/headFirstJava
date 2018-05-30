@@ -1,11 +1,12 @@
-package collectionsFramework.list;
+package collectionsFramework.arrayListhHashSet;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 
-/* Класс для сортировки списка песен ArrayList
+/* Класс для сортировки списка песен ArrayList и HashSet
  * Использует метод Collections.sort() интерфейсов Comparable и Comparator
  * Выводит исходный список песен из файла,
  * сортирует по названию и по и по исполнителю
@@ -47,6 +48,17 @@ public class Jukebox {
 
         System.out.println("Сортировка по исполнителю:");
         System.out.println(songsList);
+
+        /* Код для работы с множеством HashSet */
+
+        //Создаем множество HashSet предназначенное для хранения объектов Song
+        HashSet<Song> songSet = new HashSet<>();
+        //Метод который принимает другую коллекцию и использует ее чтобы заполнить HashSet
+        songSet.addAll(songsList);
+        System.out.println("Множество HashSet: ");
+        System.out.println(songsList);
+
+        /* Конец кода для работы с множеством HashSet */
     }
 
     //Метод считывает файл и для каждой его строки вызывает метод addSong()

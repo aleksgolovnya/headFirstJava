@@ -1,4 +1,4 @@
-package collectionsFramework.list;
+package collectionsFramework.arrayListhHashSet;
 
 /* Класс Song реализует интерфейс Comparable чтобы мы имели возможность
  * применяться метод Collections.sort() для сравнения объектов Song
@@ -12,6 +12,27 @@ public class Song implements Comparable<Song> {
     String artist;
     String rating;
     String bpm;
+
+    /* Код для работы с hashSet */
+
+    @Override
+    //HashSet или кто-нибудь еще, кто вызовет этот метод)
+    //передает сюда другой объект Song
+    public boolean equals(Object aSong) {
+        Song song = (Song) aSong;
+        //Спрашиваем у переменной title совпадает ли ее значение
+        //с названием переданной песни
+        return getTitle().equals(song.getTitle());
+    }
+
+    @Override
+    public int hashCode() {
+        //Вызываем из переменной title переопределенный метод hashCode(),
+        //который содержится в классе String
+        return title.hashCode();
+    }
+
+    /* Конец кода для работы с hashSet */
 
     @Override
     public int compareTo(Song song) {
