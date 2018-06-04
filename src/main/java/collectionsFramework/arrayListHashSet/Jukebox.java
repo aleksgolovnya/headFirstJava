@@ -1,4 +1,4 @@
-package collectionsFramework.arrayListhHashSet;
+package collectionsFramework.arrayListHashSet;
 
 import java.io.*;
 import java.util.ArrayList;

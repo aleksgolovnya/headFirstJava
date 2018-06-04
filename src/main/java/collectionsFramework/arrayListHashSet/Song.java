@@ -1,4 +1,4 @@
-package collectionsFramework.arrayListhHashSet;
+package collectionsFramework.arrayListHashSet;
 
 /* Класс Song реализует интерфейс Comparable чтобы мы имели возможность
  * применяться метод Collections.sort() для сравнения объектов Song
