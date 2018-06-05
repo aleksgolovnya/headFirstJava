@@ -50,7 +50,7 @@ public class StatementDemo {
             try {
                 /* Перед запуском неоьходимо поменять значения на уникальнык
                  * @throws PSQLException    Если пытаемся добавить данные, которые уже есть в таблице */
-                statement.executeUpdate("INSERT INTO java_tutorial VALUES ('Vasya', 'JavaScript', 3400, 21)");
+                statement.executeUpdate("INSERT INTO java_tutorial VALUES ('Ivan', 'JavaScript', 1400, 31)");
 
                 /* Мы выполнили необходимые нам изменения и вызываем метод commit() */
                 connection.commit();
@@ -61,6 +61,16 @@ public class StatementDemo {
                 /* Выполняем откат изменений, если вызвалось исключение */
                 connection.rollback(savepointOne);
             }
+
+            /* Добавляем отдельные SQL-запросы в пакет
+             * Перед запуском неоьходимо поменять значения на уникальнык
+             * @throws PSQLException    Если пытаемся добавить данные, которые уже есть в таблице */
+            statement.addBatch("INSERT INTO java_tutorial (name, specialty, salary) values ('Garry', 'C#', '2500');");
+            statement.addBatch("INSERT INTO java_tutorial (name, specialty, salary) values ('Volody', 'Assembler', '5500');");
+            statement.addBatch("INSERT INTO java_tutorial (name, specialty, salary) values ('Bill', 'C++', '12345');");
+
+            /* Метод используется для выполнения всех запросов, которые находятся в данном пакете */
+            statement.executeBatch();
 
             /* Выгружаем все данные из таблицы БД
              * метод executeQuery() возвращает экземпляр ResultSet */
