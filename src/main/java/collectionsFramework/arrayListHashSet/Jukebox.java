@@ -64,7 +64,7 @@ public class Jukebox {
     //Метод считывает файл и для каждой его строки вызывает метод addSong()
     public void getSongs() {
         try {
-            File file = new File("SongsList.txt");
+            File file = new File("src/main/resources/SongsList.txt");
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line = null;
 

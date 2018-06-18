@@ -1,4 +1,4 @@
-package db;
+package jdbc;
 
 import java.io.*;
 import java.sql.*;
@@ -6,7 +6,7 @@ import java.sql.*;
 /*
  * Работа с потоками в JDBC при помощи экземпляра PreparedStatement.
  * Приложение создаем в базе данных таблицы с именем Developer,
- * затем содрежимое файла Developer.xml загружается в созданную таблицу в БД
+ * затем содрежимое файла DeveloperExample.xml загружается в созданную таблицу в БД
  * */
 
 //TODO: написать комментарии и провести тестирование приложения
@@ -36,7 +36,7 @@ public class StreamingDataDemo {
             statement = connection.createStatement();
             createXMLTable(statement);
 
-            File file = new File("Developer.xml");
+            File file = new File("src/main/resources/DeveloperExample.xml");
             long fileLength = file.length();
             FileInputStream fileInputStream = new FileInputStream(file);
 
